@@ -24,7 +24,7 @@
         // Validate credentials
         if(empty($username_err) && empty($password_err)){
             // Prepare a select statement
-            $sql = "SELECT nome, senha FROM usuario WHERE nome = ?";
+            $sql = "SELECT login, senha FROM usuario WHERE login = ?";
 
             if($stmt = mysqli_prepare($link, $sql)){
                 // Bind variables to the prepared statement as parameters
@@ -47,7 +47,7 @@
                                 save the username to the session */
                                 session_start();
                                 $_SESSION['username'] = $username;      
-                                header("location: index.php");
+                                header("location: " . BASEURL);
                             } else{
                                 // Display an error message if password is not valid
                                 $password_err = 'The password you entered was not valid.';
@@ -93,8 +93,8 @@
 
 <body>
 <div class="container" >  
-            <div class="col-lg-4 col-md-3 col-sm-2"></div>
-            <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="logo">
                     <img src="assets/img/logo_default.jpg"  alt="Logo"  > 
                 </div>
@@ -104,14 +104,14 @@
                     </div>
 
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="input-group col-lg-12 col-md-12 col-sm-12">
+                        <div class="input-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group label-floating">
                                 <label class="control-label">Usuário</label>
                                 <input type="text" class="form-control" name="username">
                             </div>
                         </div>
 
-                        <div class="input-group col-lg-12 col-md-12 col-sm-12">
+                        <div class="input-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group label-floating">
                                 <label class="control-label">Senha</label>
                                 <input type="password" class="form-control" name="password">
@@ -119,7 +119,7 @@
                         </div>
                         <span class="help-block"><?php echo $username_err; ?></span>
                         <span class="help-block"><?php echo $password_err; ?></span>
-                        <div class="input-group col-lg-12 col-md-12 col-sm-12">
+                        <div class="input-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <input style="width: 100%;" type="submit" class="btn btn-success btn-round" value="Entrar"> 
                         </div>       
                     </form>              

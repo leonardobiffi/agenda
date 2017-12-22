@@ -1,6 +1,6 @@
 <?php 
     $page = "usuarios";
-    require_once("config.php");
+    require_once("../config.php");
     include(DB_PATH);
     include(HEADER_TEMPLATE); 
 ?>
@@ -21,56 +21,9 @@
                 </div>
             </div>
 
-            <!-- tables -->
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="text-center">ID</th>
-                        <th>Usuário</th>
-                        <th>Nome Completo</th>
-                        <th>Perfil</th>
-                        <th class="text-right">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-center">1</td>
-                        <td>andrew</td>
-                        <td>Andrew Mike</td>
-                        <td>Administrador</td>
-                        <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" title="Visualizar" class="btn btn-info btn-simple btn-xs">
-                                <i class="material-icons">person</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Excluir" class="btn btn-danger btn-simple btn-xs">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">2</td>
-                        <td>john</td>
-                        <td>John Doe</td>
-                        <td>Funcionário</td>
-                        <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" title="Visualizar" class="btn btn-info btn-simple btn-xs">
-                                <i class="material-icons">person</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Excluir" class="btn btn-danger btn-simple btn-xs">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-            <!-- end tables -->
+            <!-- table -->
+            <div class="usuarios_content"></div>
+            <!-- end table -->
 
             <!-- Modal Core -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

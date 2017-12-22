@@ -15,17 +15,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASEURL; ?>assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="<?php echo BASEURL; ?>assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Agenda de Clientes</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo BASEURL; ?>assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <link href="<?php echo BASEURL; ?>assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
@@ -42,10 +42,10 @@
     <div class="wrapper">
         <div class="sidebar" data-color="blue" data-image="assets/img/sidebar-1.jpg">
             <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
+                Tip 2: you can also add an image using data-image tag 
+            -->
             <div class="logo">
                 <a href="#" class="simple-text">
                     Nome Empresa
@@ -54,37 +54,37 @@
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="<?php if($page=='inicio'){echo 'active';}?>">
-                        <a href="index.php">
+                        <a href="<?php echo BASEURL; ?>">
                             <i class="material-icons">home</i>
                             <p>Início</p>
                         </a>
                     </li>
                     <li class="<?php if($page=='usuarios'){echo 'active';}?>">
-                        <a href="usuarios.php">
+                        <a href="<?php echo BASEURL; ?>usuarios/">
                             <i class="material-icons">person</i>
                             <p>Usuários</p>
                         </a>
                     </li>
                     <li class="<?php if($page=='bancos'){echo 'active';}?>">
-                        <a href="bancos.php">
+                        <a href="<?php echo BASEURL; ?>bancos">
                             <i class="material-icons">account_balance</i>
                             <p>Bancos</p>
                         </a>
                     </li>
                     <li class="<?php if($page=='empresas'){echo 'active';}?>">
-                        <a href="empresas.php">
+                        <a href="<?php echo BASEURL; ?>empresas">
                             <i class="material-icons">business</i>
                             <p>Empresas</p>
                         </a>
                     </li>
                     <li class="<?php if($page=='clientes'){echo 'active';}?>">
-                        <a href="clientes.php">
+                        <a href="<?php echo BASEURL; ?>clientes">
                             <i class="material-icons">work</i>
                             <p>Clientes</p>
                         </a>
                     </li>
                     <li class="active-pro">
-                        <a href="logout.php">
+                        <a href="<?php echo BASEURL; ?>logout.php">
                             <i class="material-icons">cancel</i>
                             <p>Sair</p>
                         </a>
@@ -102,7 +102,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"> Agenda de Clientes </a>
+                        <a class="navbar-brand" href="<?php echo BASEURL; ?>"> Agenda de Clientes </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         
