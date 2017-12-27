@@ -10,15 +10,14 @@
         $nome_completo = $_POST['nome_completo'];
         $login = $_POST['login'];
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-        $admin = ($_POST['admin'] == 0) ? 0 : $_POST['admin'];
-        $funcionario = ($_POST['funcionario'] == 0) ? 0 : $_POST['funcionario'];
+        $perfil = $_POST['perfil'];
         $data_cadastro = datetimeNow();
         $status = 1;
 
-        $query = "INSERT INTO usuario (nome_completo, login, senha, id_unidade, id_setor, data_cadastro, admin, patrimonio, n_conformidade, status) VALUES('$nome_usuario', '$login_usuario', '$senha_usuario', '$id_unidade', '$id_setor', '$data_cadastro', '$admin', '$patrimonio', '$n_conformidade', '$status')";
+        $query = "INSERT INTO usuario (nome_completo, login, senha, perfil, data_cadastro, status) VALUES('$nome_completo', '$login', '$senha', '$perfil', '$data_cadastro', '$status')";
 
-        if (!$result = mysqli_query($con, $query)) {
-            exit(mysqli_error($con));
+        if (!$result = mysqli_query($link, $query)) {
+            exit(mysqli_error($link));
         }
         echo "Usuário Adicionado!";
     }

@@ -76,16 +76,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
 
     <title>Agenda de Clientes</title>
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/login.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <link href="css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
@@ -96,7 +96,7 @@
             <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12"></div>
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="logo">
-                    <img src="assets/img/logo_default.jpg"  alt="Logo"  > 
+                    <img src="img/logo_default.jpg"  alt="Logo"  > 
                 </div>
                 <div class="row loginbox">                    
                     <div class="singtext">

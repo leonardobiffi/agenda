@@ -35,14 +35,17 @@
                 <td>'.$row['nome_completo'].'</td>
                 <td>'.$row['perfil'].'</td>
                 <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" title="Visualizar" class="btn btn-info btn-simple btn-xs">
+                    <button onclick="viewUsuario('.$row['id'].')" type="button" rel="tooltip" title="Visualizar" class="btn btn-info btn-simple btn-xs">
                         <i class="material-icons">person</i>
                     </button>
-                    <button type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
+                    <button onclick="getUsuario('.$row['id'].')" type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
                         <i class="material-icons">edit</i>
                     </button>
                     <button type="button" rel="tooltip" title="Excluir" class="btn btn-danger btn-simple btn-xs">
                         <i class="material-icons">delete</i>
+                    </button>
+                    <button onclick="getSenha('.$row['id'].')" type="button" rel="tooltip" title="Alterar Senha" class="btn btn-warning btn-simple btn-xs">
+                        <i class="material-icons">lock</i>
                     </button>
                 </td>
             </tr>';

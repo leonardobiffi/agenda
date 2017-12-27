@@ -15,17 +15,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASEURL; ?>assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="<?php echo BASEURL; ?>assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo BASEURL; ?>img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="<?php echo BASEURL; ?>img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Agenda de Clientes</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
     <!-- Bootstrap core CSS     -->
-    <link href="<?php echo BASEURL; ?>assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo BASEURL; ?>css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="<?php echo BASEURL; ?>assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <link href="<?php echo BASEURL; ?>css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="blue" data-image="assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="blue" data-image="img/sidebar-1.jpg">
             <!--
                 Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -105,7 +105,15 @@
                         <a class="navbar-brand" href="<?php echo BASEURL; ?>"> Agenda de Clientes </a>
                     </div>
                     <div class="collapse navbar-collapse">
-                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#">
+                                    <i class="material-icons">person</i>
+                                    <?php echo $_SESSION['username']; ?>
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group  is-empty">
                                 <input type="text" class="form-control" placeholder="Buscar">

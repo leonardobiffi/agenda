@@ -15,3 +15,10 @@ if ( !defined('DB_PATH') )
 /** caminhos dos templates de header e footer **/
 define('HEADER_TEMPLATE', ABSPATH . 'include/header.php');
 define('FOOTER_TEMPLATE', ABSPATH . 'include/footer.php');
+
+function datetimeNow() {
+
+	/* Fuso Horario padrão Campo_Grande | Horario de Verão Sao_Paulo*/
+	$now = date_create('now', new DateTimeZone('America/Campo_Grande'));
+	return $now->format("Y-m-d H:i:s");
+}
