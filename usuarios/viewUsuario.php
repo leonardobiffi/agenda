@@ -10,7 +10,7 @@
       $id = $_POST['id'];
 
       // Get User Details
-      $query = "SELECT nome_completo, login, perfil, status, DATE_FORMAT(data_cadastro, '%d/%m/%Y %H:%i') as data_cadastro FROM usuario WHERE id = '$id'";
+      $query = "SELECT nome_completo, login, perfil, status, DATE_FORMAT(data_cadastro, '%d/%m/%Y %H:%i') as data_cadastro, DATE_FORMAT(data_modificacao, '%d/%m/%Y %H:%i') as data_modificacao FROM usuario WHERE id = '$id'";
 
       if (!$result = mysqli_query($link, $query)) {
           exit(mysqli_error($link));

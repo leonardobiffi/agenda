@@ -7,6 +7,8 @@
     $username = $password = "";
     $username_err = $password_err = "";
 
+
+
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Check if username is empty
@@ -21,10 +23,31 @@
         } else{
             $password = trim($_POST['password']);
         }
+
+        //verify profile user
+        $query = "SELECT perfil FROM usuario WHERE login = '$username'";
+
+        if (!$result = mysqli_query($link, $query)) {
+            exit(mysqli_error($link));
+        }
+        $data = array();
+        if(mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $data = $row;
+               
+            }
+        }
+        else
+        {
+            $data['perfil'] = "Funcionario"; 
+        }
+
+        setcookie("perfil",$data['perfil']);
+
         // Validate credentials
         if(empty($username_err) && empty($password_err)){
             // Prepare a select statement
-            $sql = "SELECT login, senha FROM usuario WHERE login = ?";
+            $sql = "SELECT login, senha FROM usuario WHERE login = ? AND status=1";
 
             if($stmt = mysqli_prepare($link, $sql)){
                 // Bind variables to the prepared statement as parameters

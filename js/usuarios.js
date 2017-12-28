@@ -111,6 +111,7 @@ function viewUsuario(id) {
             $("#view_login").html(usuario.login);
             $("#view_perfil").html(usuario.perfil);
             $("#view_data_cadastro").html(usuario.data_cadastro);
+            $("#view_data_modificacao").html(usuario.data_modificacao);
             //$("#view_ultimo_login").html(usuario.ultimo_login);
 
             if(usuario.status == 1) {
@@ -223,6 +224,27 @@ function checkConfirmarSenha() {
         document.getElementById("ico-conf-senha").innerHTML = "done";
     }
 
+}
+
+// DELETE Usuario
+function deleteUsuario() {
+    var id = $("#delete_usuario_id").val();
+    $.post("../usuarios/deleteUsuario.php", {
+            id: id
+        },
+        function (data, status) {
+            // reload usuarios
+            readUsuarios();
+        }
+    );
+    $("#delete_usuario_modal").modal("hide");
+}
+
+function askDelete(id) {
+  // Add User ID to the hidden field for furture usage
+  $("#delete_usuario_id").val(id);
+  // Open modal popup
+  $("#delete_usuario_modal").modal("show");
 }
 
 // READ records on page load

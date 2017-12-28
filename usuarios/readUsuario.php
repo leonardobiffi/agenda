@@ -41,7 +41,7 @@
                     <button onclick="getUsuario('.$row['id'].')" type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
                         <i class="material-icons">edit</i>
                     </button>
-                    <button type="button" rel="tooltip" title="Excluir" class="btn btn-danger btn-simple btn-xs">
+                    <button onclick="askDelete('.$row['id'].')" type="button" rel="tooltip" title="Excluir" class="btn btn-danger btn-simple btn-xs">
                         <i class="material-icons">delete</i>
                     </button>
                     <button onclick="getSenha('.$row['id'].')" type="button" rel="tooltip" title="Alterar Senha" class="btn btn-warning btn-simple btn-xs">

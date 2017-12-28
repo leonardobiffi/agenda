@@ -8,6 +8,7 @@
       header("location: login.php");
       exit;
     }
+
 ?>
 
 <!doctype html>
@@ -59,12 +60,28 @@
                             <p>Início</p>
                         </a>
                     </li>
-                    <li class="<?php if($page=='usuarios'){echo 'active';}?>">
-                        <a href="<?php echo BASEURL; ?>usuarios/">
+                    
+                    <?php
+                    
+                    if($page=='usuarios'){
+                        $status = 'active';
+                    }
+
+                    if($_COOKIE['perfil'] == "Administrador") {
+                        echo '
+
+                    <li class="'.$status.'">
+                        <a href="'.BASEURL.'usuarios/">
                             <i class="material-icons">person</i>
                             <p>Usuários</p>
                         </a>
                     </li>
+                        ';
+                    }
+
+                    ?>
+
+
                     <li class="<?php if($page=='bancos'){echo 'active';}?>">
                         <a href="<?php echo BASEURL; ?>bancos">
                             <i class="material-icons">account_balance</i>

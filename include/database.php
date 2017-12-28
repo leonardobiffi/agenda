@@ -5,7 +5,7 @@
     define('DB_SERVER', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '081264');
-    define('DB_NAME', 'mydb');
+    define('DB_NAME', 'agendadb');
 
     /* Attempt to connect to MySQL database */
     $link = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);

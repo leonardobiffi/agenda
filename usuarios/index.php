@@ -3,6 +3,7 @@
     require_once("../config.php");
     include(DB_PATH);
     include(HEADER_TEMPLATE); 
+
 ?>
 
     <!-- Container -->
@@ -77,8 +78,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-info btn-simple" onclick="addUsuario()">Salvar</button>
+                            <button type="button" class="btn btn-success btn-simple" onclick="addUsuario()"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Fechar</button>
                         </div>
                     </div>
                 </div>
@@ -130,8 +131,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-info btn-simple" onclick="updateUsuario()">Salvar</button>
+                            <button type="button" class="btn btn-success btn-simple" onclick="updateUsuario()"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Fechar</button>
                             <input type="hidden" id="hidden_usuario_id">
                         </div>
                     </div>
@@ -166,8 +167,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-info btn-simple" onclick="updateSenha()">Salvar</button>
+                            <button type="button" class="btn btn-success btn-simple" onclick="updateSenha()"><i class="fa fa-check"></i> Salvar</button>
+                            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Fechar</button>
                             <input type="hidden" id="hidden_senha_id">
                         </div>
                     </div>
@@ -185,7 +186,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <table class="table table-striped">
+                                <table class="table">
                                   <tr>
                                     <th>Nome Completo</th>
                                     <td id="view_nome"></td>
@@ -206,16 +207,40 @@
                                     <th>Data Cadastro</th>
                                     <td id="view_data_cadastro"></td>
                                   </tr>
+                                  <tr>
+                                    <th>Data Modificação</th>
+                                    <td id="view_data_modificacao"></td>
+                                  </tr>
                                 </table>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Fechar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Fim modal Visualizar usuario -->
+
+            <!-- Modal - Excluir Usuario -->
+            <div class="modal fade" id="delete_usuario_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLabel">Excluir Usuário</h4>
+                  </div>
+                  <div class="modal-body">
+                    Deseja <strong>Excluir</strong> este Usuário?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-simple" onclick="deleteUsuario()"><i class="fa fa-check"></i> Sim</button>
+                    <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Não</button>
+                    <input type="hidden" id="delete_usuario_id">
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Fim Modal excluir usuario -->
         </div>
     </div>
 
