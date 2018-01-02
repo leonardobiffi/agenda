@@ -3,10 +3,12 @@
 </body>
 <!--   Core JS Files   -->
 <script src="<?php echo BASEURL; ?>js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="<?php echo BASEURL; ?>js/maskedinput.js" type="text/javascript"></script>
 <script src="<?php echo BASEURL; ?>js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo BASEURL; ?>js/material.min.js" type="text/javascript"></script>
 
 <script src="<?php echo BASEURL; ?>js/usuarios.js"></script>
+<script src="<?php echo BASEURL; ?>js/empresas.js"></script>
 
 <!--  Dynamic Elements plugin -->
 <script src="<?php echo BASEURL; ?>js/arrive.min.js"></script>

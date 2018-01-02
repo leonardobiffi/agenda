@@ -1,26 +1,7 @@
 <?php 
     $page = "inicio";
-    require_once("config.php");
-    include(DB_PATH);
+    require_once("count.php");
     include(HEADER_TEMPLATE); 
-
-
-    $query = "SELECT count(*) as num_usuario FROM usuario";
-
-    if (!$result = mysqli_query($link, $query)) {
-        exit(mysqli_error($link));
-    }
-    $data = array();
-    if(mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $data = $row;
-               
-        }
-    }
-    else
-    {
-        $data['num_usuario'] = "0"; 
-    }
 
 ?>
             
@@ -35,9 +16,7 @@
                                 </div>
                                 <div class="card-content">
                                     <p class="category">Clientes</p>
-                                    <h3 class="title">15
-                                        <small></small>
-                                    </h3>
+                                    <h3 class="title"><?php echo $data[2]['num_cliente']; ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +27,7 @@
                                 </div>
                                 <div class="card-content">
                                     <p class="category">Empresas</p>
-                                    <h3 class="title">3</h3>
+                                    <h3 class="title"><?php echo $data[1]['num_empresa']; ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +39,7 @@
                                 </div>
                                 <div class="card-content">
                                     <p class="category">Usuários</p>
-                                    <h3 class="title"><?php echo $data['num_usuario']; ?></h3>
+                                    <h3 class="title"><?php echo $data[0]['num_usuario']; ?></h3>
                                 </div>
 
                             </div>

@@ -240,7 +240,7 @@ function deleteUsuario() {
     $("#delete_usuario_modal").modal("hide");
 }
 
-function askDelete(id) {
+function askDeleteUsuario(id) {
   // Add User ID to the hidden field for furture usage
   $("#delete_usuario_id").val(id);
   // Open modal popup
