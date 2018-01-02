@@ -50,7 +50,6 @@ function readEmpresas() {
     });
 }
 
-
 // DETAILS Empresa
 function getEmpresa(id) {
     // Add User ID to the hidden field for furture usage
@@ -65,16 +64,14 @@ function getEmpresa(id) {
 
             var delay = 200; //0.2 second
             setTimeout(function() {
-                // Assing existing values to the modal popup fields
-                $("#update_nome").html(empresa.nome);
-                $("#update_cnpj").html(empresa.cnpj);
-                $("#update_endereco").html(empresa.endereco);
-                $("#update_bairro").html(empresa.bairro);
-                $("#update_numero").html(empresa.numero);
-                //$("#update_cidade").html(empresa.cidade);
-                //$("#update_estado").html(empresa.estado);
-                $("#update_telefone").html(empresa.telefone);
-                $("#update_celular").html(empresa.celular);
+              // Assing existing values to the modal popup fields
+              $("#update_nome").val(empresa.nome);
+              $("#update_cnpj").val(empresa.cnpj);
+              $("#update_bairro").val(empresa.bairro);
+              $("#update_endereco").val(empresa.endereco);
+              $("#update_numero").val(empresa.numero);
+              $("#update_telefone").val(empresa.telefone);
+              $("#update_celular").val(empresa.celular);
 
             }, delay);
         }
@@ -84,7 +81,7 @@ function getEmpresa(id) {
 }
 
 // UPDATE Usuario
-function updateUsuario() {
+function updateEmpresa() {
     // get values
     var nome_completo = $("#update_nome").val();
     var login = $("#update_login").val();
@@ -209,8 +206,8 @@ $(document).ready(function () {
         $('#cnpj').mask('99.999.999/9999-99');
         $('#telefone').mask('(99) 9999-9999');
         $('#celular').mask('(99) 99999-9999');
-        //$('#update_cnpj').mask('99.999.999/9999-99');
-        //$('#update_telefone').mask('(99) 9999-9999');
-        //$('#update_celular').mask('(99) 99999-9999');
+        $('#update_cnpj').mask('99.999.999/9999-99');
+        $('#update_telefone').mask('(99) 9999-9999');
+        $('#update_celular').mask('(99) 99999-9999');
     });
 });
