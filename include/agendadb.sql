@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Tempo de geração: 02/01/2018 às 08:03
--- Versão do servidor: 10.1.25-MariaDB-1
--- Versão do PHP: 7.0.26-2+ubuntu17.10.1+deb.sury.org+2
+-- Host: localhost
+-- Generation Time: 02-Jan-2018 às 20:14
+-- Versão do servidor: 5.7.20-0ubuntu0.16.04.1
+-- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `agendadb`
+-- Database: `agendadb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `banco`
+-- Estrutura da tabela `banco`
 --
 
 CREATE TABLE `banco` (
@@ -34,7 +34,7 @@ CREATE TABLE `banco` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cidade`
+-- Estrutura da tabela `cidade`
 --
 
 CREATE TABLE `cidade` (
@@ -44,7 +44,7 @@ CREATE TABLE `cidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `cidade`
+-- Extraindo dados da tabela `cidade`
 --
 
 INSERT INTO `cidade` (`id`, `nome`, `uf`) VALUES
@@ -5625,7 +5625,7 @@ INSERT INTO `cidade` (`id`, `nome`, `uf`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cliente`
+-- Estrutura da tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -5647,7 +5647,7 @@ CREATE TABLE `cliente` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `empresa`
+-- Estrutura da tabela `empresa`
 --
 
 CREATE TABLE `empresa` (
@@ -5657,16 +5657,19 @@ CREATE TABLE `empresa` (
   `endereco` varchar(100) DEFAULT NULL,
   `bairro` varchar(45) DEFAULT NULL,
   `numero` varchar(45) DEFAULT NULL,
-  `cidade` int(10) UNSIGNED DEFAULT NULL,
-  `estado` int(10) UNSIGNED DEFAULT NULL,
-  `telefone1` varchar(45) DEFAULT NULL,
-  `telefone2` varchar(45) DEFAULT NULL
+  `cidade` int(10) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
+  `telefone` varchar(45) DEFAULT NULL,
+  `celular` varchar(45) DEFAULT NULL,
+  `data_cadastro` datetime DEFAULT NULL,
+  `data_modificacao` datetime DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `estado`
+-- Estrutura da tabela `estado`
 --
 
 CREATE TABLE `estado` (
@@ -5677,7 +5680,7 @@ CREATE TABLE `estado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `estado`
+-- Extraindo dados da tabela `estado`
 --
 
 INSERT INTO `estado` (`id`, `nome`, `uf`, `regiao`) VALUES
@@ -5712,7 +5715,7 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `regiao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pais`
+-- Estrutura da tabela `pais`
 --
 
 CREATE TABLE `pais` (
@@ -5723,7 +5726,7 @@ CREATE TABLE `pais` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `regiao`
+-- Estrutura da tabela `regiao`
 --
 
 CREATE TABLE `regiao` (
@@ -5732,7 +5735,7 @@ CREATE TABLE `regiao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `regiao`
+-- Extraindo dados da tabela `regiao`
 --
 
 INSERT INTO `regiao` (`id`, `nome`) VALUES
@@ -5745,7 +5748,7 @@ INSERT INTO `regiao` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -5760,31 +5763,31 @@ CREATE TABLE `usuario` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome_completo`, `senha`, `data_cadastro`, `login`, `perfil`, `status`, `data_modificacao`) VALUES
 (1, 'Administrador', '$2y$10$vPCwScnZ.MCHxbbVGr.E1eSIwrRp0V91aSixt6B4bS.ESyLJfARIu', '2017-12-28 07:28:28', 'admin', 'Administrador', 1, NULL);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `banco`
+-- Indexes for table `banco`
 --
 ALTER TABLE `banco`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
--- Índices de tabela `cidade`
+-- Indexes for table `cidade`
 --
 ALTER TABLE `cidade`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`),
@@ -5793,7 +5796,7 @@ ALTER TABLE `cliente`
   ADD KEY `fk_cliente_banco_idx` (`banco`);
 
 --
--- Índices de tabela `empresa`
+-- Indexes for table `empresa`
 --
 ALTER TABLE `empresa`
   ADD PRIMARY KEY (`id`),
@@ -5802,72 +5805,72 @@ ALTER TABLE `empresa`
   ADD KEY `fk_empresa_estado_idx` (`estado`);
 
 --
--- Índices de tabela `estado`
+-- Indexes for table `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `pais`
+-- Indexes for table `pais`
 --
 ALTER TABLE `pais`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
--- Índices de tabela `regiao`
+-- Indexes for table `regiao`
 --
 ALTER TABLE `regiao`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `banco`
+-- AUTO_INCREMENT for table `banco`
 --
 ALTER TABLE `banco`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `cidade`
+-- AUTO_INCREMENT for table `cidade`
 --
 ALTER TABLE `cidade`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5571;
 --
--- AUTO_INCREMENT de tabela `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `empresa`
+-- AUTO_INCREMENT for table `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `estado`
+-- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
--- AUTO_INCREMENT de tabela `pais`
+-- AUTO_INCREMENT for table `pais`
 --
 ALTER TABLE `pais`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `regiao`
+-- AUTO_INCREMENT for table `regiao`
 --
 ALTER TABLE `regiao`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

@@ -135,13 +135,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group label-floating">
                                         <label class="control-label" for="status">Estado</label>
-                                        <div class="index_estados_content"></div>
+                                        <div class="index_estados_update_content"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group label-floating">
                                         <label class="control-label" for="peril">Cidade</label>
-                                        <div class="index_cidades_content">
+                                        <div class="index_cidades_update_content">
                                             <select type='text' id='update_cidade' class='form-control'>
                                               <option value=''>Selecione a Cidade...</option>
                                             </select>
@@ -170,6 +170,16 @@
                                     <div class="form-group label-floating">
                                         <label class="control-label">Celular</label>
                                         <input type="text" class="form-control" id="update_celular"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label" for="update_status">Status</label>
+                                        <select class="form-control" id="update_status">
+                                            <option></option>
+                                            <option value="1">Ativo</option>
+                                            <option value="0">Inativo</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -253,6 +263,26 @@
                 </div>
             </div>
             <!-- Fim modal Visualizar Empresa -->
+
+            <!-- Modal - Excluir Empresa -->
+            <div class="modal fade" id="delete_empresa_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLabel">Excluir Empresa</h4>
+                  </div>
+                  <div class="modal-body">
+                    Deseja <strong>Excluir</strong> esta Empresa?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-simple" onclick="deleteEmpresa()"><i class="fa fa-check"></i> Sim</button>
+                    <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Não</button>
+                    <input type="hidden" id="delete_empresa_id">
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Fim Modal excluir Empresa -->
 
         </div>
     </div>

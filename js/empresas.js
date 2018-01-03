@@ -55,12 +55,16 @@ function getEmpresa(id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_empresa_id").val(id);
 
+    indexEstadosUpdate("update_estado", 'indexCidadesUpdate(this.value,"update_cidade");');
+
     $.post("../empresas/getEmpresa.php", {
             id: id
         },
         function (data, status) {
             // PARSE json data
             var empresa = JSON.parse(data);
+
+            indexCidadesUpdate(empresa.estado, "update_cidade");
 
             var delay = 200; //0.2 second
             setTimeout(function() {
@@ -72,6 +76,9 @@ function getEmpresa(id) {
               $("#update_numero").val(empresa.numero);
               $("#update_telefone").val(empresa.telefone);
               $("#update_celular").val(empresa.celular);
+              $("#update_estado").val(empresa.estado);
+              $("#update_cidade").val(empresa.cidade);
+              $("#update_status").val(empresa.status);
 
             }, delay);
         }
@@ -80,30 +87,42 @@ function getEmpresa(id) {
     $("#update_empresa_modal").modal("show");
 }
 
-// UPDATE Usuario
+// UPDATE Empresa
 function updateEmpresa() {
     // get values
-    var nome_completo = $("#update_nome").val();
-    var login = $("#update_login").val();
-    var perfil = $("#update_perfil").val();
+    var nome = $("#update_nome").val();
+    var cnpj = $("#update_cnpj").val();
+    var bairro = $("#update_bairro").val();
+    var endereco = $("#update_endereco").val();
+    var numero = $("#update_numero").val();
+    var telefone = $("#update_telefone").val();
+    var celular = $("#update_celular").val();
+    var estado = $("#update_estado").val();
+    var cidade = $("#update_cidade").val();
     var status = $("#update_status").val();
-
+    
     // get hidden field value
-    var id = $("#hidden_usuario_id").val();
+    var id = $("#hidden_empresa_id").val();
 
-    // Update Usuario in php file
-    $.post("../usuarios/updateUsuario.php", {
+    // Update Empresa in php file
+    $.post("../empresas/updateEmpresa.php", {
             id: id,
-            nome_completo: nome_completo,
-            login: login,
-            perfil: perfil,
+            nome: nome,
+            cnpj: cnpj,
+            bairro: bairro,
+            endereco: endereco,
+            numero: numero,
+            telefone: telefone,
+            celular: celular,
+            estado: estado,
+            cidade: cidade,
             status: status
         },
         function (data, status) {
             // hide modal popup
-            $("#update_usuario_modal").modal("hide");
+            $("#update_empresa_modal").modal("hide");
             // reload usuarios
-            readUsuarios(); 
+            readEmpresas(); 
         }
     );
 }
@@ -152,23 +171,23 @@ function viewEmpresa(id) {
 
 // DELETE Empresa
 function deleteEmpresa() {
-    var id = $("#delete_usuario_id").val();
-    $.post("../usuarios/deleteUsuario.php", {
+    var id = $("#delete_empresa_id").val();
+    $.post("../empresas/deleteEmpresa.php", {
             id: id
         },
         function (data, status) {
             // reload usuarios
-            readUsuarios();
+            readEmpresas();
         }
     );
-    $("#delete_usuario_modal").modal("hide");
+    $("#delete_empresa_modal").modal("hide");
 }
 
 function askDeleteEmpresa(id) {
   // Add User ID to the hidden field for furture usage
-  $("#delete_usuario_id").val(id);
+  $("#delete_empresa_id").val(id);
   // Open modal popup
-  $("#delete_usuario_modal").modal("show");
+  $("#delete_empresa_modal").modal("show");
 }
 
 // INDEX Estados
@@ -183,6 +202,17 @@ function indexEstados(id,func) {
     );
 }
 
+function indexEstadosUpdate(id, func) {
+    $.post("../empresas/indexEstados.php", {
+          id: id,
+          func: func
+        },
+        function (data, status) {
+          $(".index_estados_update_content").html(data);
+        }
+    );
+}
+
 // INDEX Cidades
 function indexCidades(uf, id = null) {
     $.post("../empresas/indexCidades.php", {
@@ -191,6 +221,17 @@ function indexCidades(uf, id = null) {
         },
         function (data, status) {
           $(".index_cidades_content").html(data);
+        }
+    );
+}
+
+function indexCidadesUpdate(uf, id = null) {
+    $.post("../empresas/indexCidades.php", {
+          uf: uf,
+          id: id
+        },
+        function (data, status) {
+          $(".index_cidades_update_content").html(data);
         }
     );
 }
