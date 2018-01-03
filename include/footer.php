@@ -9,6 +9,7 @@
 
 <script src="<?php echo BASEURL; ?>js/usuarios.js"></script>
 <script src="<?php echo BASEURL; ?>js/empresas.js"></script>
+<script src="<?php echo BASEURL; ?>js/clientes.js"></script>
 
 <!--  Dynamic Elements plugin -->
 <script src="<?php echo BASEURL; ?>js/arrive.min.js"></script>

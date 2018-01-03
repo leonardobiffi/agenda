@@ -5634,14 +5634,17 @@ CREATE TABLE `cliente` (
   `cpf` varchar(45) DEFAULT NULL,
   `rg` varchar(45) DEFAULT NULL,
   `empresa` int(10) UNSIGNED DEFAULT NULL,
+  `celular` varchar(45) DEFAULT NULL,
   `telefone1` varchar(45) DEFAULT NULL,
   `telefone2` varchar(45) DEFAULT NULL,
-  `telefone3` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT '',
   `banco` int(10) UNSIGNED DEFAULT NULL,
   `agencia` varchar(45) DEFAULT NULL,
   `conta` varchar(45) DEFAULT NULL,
-  `observacao` varchar(500) DEFAULT NULL
+  `observacao` varchar(500) DEFAULT NULL,
+  `data_cadastro` datetime DEFAULT NULL,
+  `data_modificacao` datetime DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

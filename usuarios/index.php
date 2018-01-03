@@ -70,7 +70,7 @@
                                         <label class="control-label" for="status">Status</label>
                                         <select class="form-control" id="status">
                                             <option></option>
-                                            <option value="1">Ativo</option>
+                                            <option value="1" selected>Ativo</option>
                                             <option value="0">Inativo</option>
                                         </select>
                                     </div>

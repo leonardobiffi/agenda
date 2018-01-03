@@ -16,7 +16,7 @@
                 </thead>
                 <tbody>';
 
-    $query = "SELECT * FROM usuario";
+    $query = "SELECT * FROM usuario ORDER BY nome_completo";
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));
