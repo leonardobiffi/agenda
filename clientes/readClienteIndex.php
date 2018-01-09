@@ -8,11 +8,11 @@
                 <thead>
                     <tr>
                         <th>Nome Completo</th>
+                        <th>CPF</th>
                         <th>Empresa</th>
                         <th>Celular</th>
                         <th>Telefone</th>
                         <th>Email</th>
-                        <th>CPF</th>
                     </tr>
                 </thead>
                 <tbody>';
@@ -32,11 +32,11 @@
             $data .= '
             <tr>
                 <td>'.$row['nome_completo'].'</td>
+                <td>'.$row['cpf'].'</td>
                 <td>'.$row['nome_empresa'].'</td>
                 <td>'.$row['celular'].'</td>
                 <td>'.$row['telefone'].'</td>
                 <td>'.$row['email'].'</td>
-                <td>'.$row['cpf'].'</td>
             </tr>';
 
             $number++;

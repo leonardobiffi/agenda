@@ -31,7 +31,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Nova Empresa</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Nova Empresa</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -110,7 +110,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Editar Empresa</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Editar Empresa</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -200,7 +200,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Visualizar Empresa</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Visualizar Empresa</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -270,7 +270,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modalLabel">Excluir Empresa</h4>
+                    <h4 class="modal-title" id="modalLabel"><b>Excluir Empresa</b></h4>
                   </div>
                   <div class="modal-body">
                     Deseja <strong>Excluir</strong> esta Empresa?

@@ -17,10 +17,11 @@
       $telefone1 = $_POST['telefone1'];
       $telefone2 = $_POST['telefone2'];
       $status = $_POST['status'];
+      $observacao = $_POST['observacao'];
       $data_modificacao = datetimeNow();
 
       // Update Usuario
-      $query = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', rg = '$rg', empresa = '$empresa', email = '$email', telefone1 = '$telefone1', telefone2 = '$telefone2', celular = '$celular', status = '$status', data_modificacao = '$data_modificacao' WHERE id = '$id'";
+      $query = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', rg = '$rg', empresa = '$empresa', email = '$email', telefone1 = '$telefone1', telefone2 = '$telefone2', celular = '$celular', status = '$status', data_modificacao = '$data_modificacao', observacao  = '$observacao' WHERE id = '$id'";
 
       if (!$result = mysqli_query($link, $query)) {
           exit(mysqli_error($link));

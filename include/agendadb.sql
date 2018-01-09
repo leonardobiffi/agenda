@@ -5641,7 +5641,7 @@ CREATE TABLE `cliente` (
   `banco` int(10) UNSIGNED DEFAULT NULL,
   `agencia` varchar(45) DEFAULT NULL,
   `conta` varchar(45) DEFAULT NULL,
-  `observacao` varchar(500) DEFAULT NULL,
+  `observacao` text DEFAULT NULL,
   `data_cadastro` datetime DEFAULT NULL,
   `data_modificacao` datetime DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL

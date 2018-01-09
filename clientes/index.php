@@ -31,7 +31,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Novo Cliente</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Novo Cliente</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -83,6 +83,12 @@
                                         <input type="text" class="form-control" id="telefone2"/>
                                     </div>
                                 </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Observação</label>
+                                        <textarea class="form-control" rows="6" id="observacao"></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -100,7 +106,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Editar Cliente</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Editar Cliente</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -162,6 +168,12 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Observação</label>
+                                        <textarea class="form-control" rows="6" id="update_observacao"></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -180,7 +192,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Visualizar Cliente</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Visualizar Cliente</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -229,6 +241,12 @@
                                     <th>Data Modificação</th>
                                     <td id="view_data_modificacao"></td>
                                   </tr>
+                                  <tr>
+                                    <th>Observação</th>
+                                    <td>
+                                        <textarea id="view_observacao" cols="50" rows="6" readonly></textarea>
+                                    </td>
+                                  </tr>
                                 </table>
                             </div>
                         </div>
@@ -246,7 +264,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modalLabel">Excluir Cliente</h4>
+                    <h4 class="modal-title" id="modalLabel"><b>Excluir Cliente</b></h4>
                   </div>
                   <div class="modal-body">
                     Deseja <strong>Excluir</strong> este Cliente?

@@ -10,7 +10,7 @@
       $id = $_POST['id'];
 
       // Get User Details
-      $query = "SELECT cliente.nome as nome_completo, cpf, rg, empresa.nome as empresa, email, cliente.celular as celular, telefone1, telefone2, cliente.status as status, DATE_FORMAT(cliente.data_cadastro, '%d/%m/%Y %H:%i') as data_cadastro, DATE_FORMAT(cliente.data_modificacao, '%d/%m/%Y %H:%i') as data_modificacao FROM cliente INNER JOIN empresa ON empresa.id=cliente.empresa WHERE cliente.id = '$id'";
+      $query = "SELECT cliente.nome as nome_completo, cpf, rg, empresa.nome as empresa, email, cliente.celular as celular, telefone1, telefone2, cliente.status as status, DATE_FORMAT(cliente.data_cadastro, '%d/%m/%Y %H:%i') as data_cadastro, DATE_FORMAT(cliente.data_modificacao, '%d/%m/%Y %H:%i') as data_modificacao, observacao FROM cliente INNER JOIN empresa ON empresa.id=cliente.empresa WHERE cliente.id = '$id'";
 
       if (!$result = mysqli_query($link, $query)) {
           exit(mysqli_error($link));

@@ -81,13 +81,14 @@
 
                     ?>
 
-
+                    <!--
                     <li class="<?php if($page=='bancos'){echo 'active';}?>">
                         <a href="<?php echo BASEURL; ?>bancos">
                             <i class="material-icons">account_balance</i>
                             <p>Bancos</p>
                         </a>
                     </li>
+                    -->
                     <li class="<?php if($page=='empresas'){echo 'active';}?>">
                         <a href="<?php echo BASEURL; ?>empresas">
                             <i class="material-icons">business</i>
@@ -131,6 +132,7 @@
                                 </a>
                             </li>
                         </ul>
+                        <!--
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group  is-empty">
                                 <input type="text" class="form-control" placeholder="Buscar">
@@ -141,6 +143,7 @@
                                 <div class="ripple-container"></div>
                             </button>
                         </form>
+                        -->
                     </div>
                 </div>
             </nav>

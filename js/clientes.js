@@ -9,6 +9,7 @@ function addCliente() {
     var celular = $("#celular").val();
     var telefone1 = $("#telefone1").val();
     var telefone2 = $("#telefone2").val();
+    var observacao = $("#observacao").val();
 
     // Add Cliente
     $.post("../clientes/addCliente.php", {
@@ -19,7 +20,8 @@ function addCliente() {
         email: email,
         celular: celular,
         telefone1: telefone1,
-        telefone2: telefone2
+        telefone2: telefone2,
+        observacao: observacao
 
     }, function (data, status) {
         // close the popup
@@ -37,6 +39,7 @@ function addCliente() {
         $("#celular").val("");
         $("#telefone1").val("");
         $("#telefone2").val("");
+        $("#observacao").val("");
     });
 }
 
@@ -80,6 +83,7 @@ function getCliente(id) {
               $("#update_telefone1").val(cliente.telefone1);
               $("#update_telefone2").val(cliente.telefone2);
               $("#update_status").val(cliente.status);
+              $("#update_observacao").val(cliente.observacao);
 
             }, delay);
         }
@@ -100,6 +104,7 @@ function updateCliente() {
     var telefone1 = $("#update_telefone1").val();
     var telefone2 = $("#update_telefone2").val();
     var status = $("#update_status").val();
+    var observacao = $("#update_observacao").val();
     
     // get hidden field value
     var id = $("#hidden_cliente_id").val();
@@ -115,7 +120,8 @@ function updateCliente() {
             celular: celular,
             telefone1: telefone1,
             telefone2: telefone2,
-            status: status
+            status: status,
+            observacao: observacao
         },
         function (data, status) {
             // hide modal popup
@@ -151,7 +157,7 @@ function viewCliente(id) {
             $("#view_telefone2").html(cliente.telefone2);
             $("#view_data_cadastro").html(cliente.data_cadastro);
             $("#view_data_modificacao").html(cliente.data_modificacao);
-            //$("#view_ultimo_login").html(usuario.ultimo_login);
+            $("#view_observacao").html(cliente.observacao);
 
             if(cliente.status == 1) {
               $("#view_status").html("Ativo");

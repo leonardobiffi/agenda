@@ -15,10 +15,11 @@
         $celular = $_POST['celular'];
         $telefone1 = $_POST['telefone1'];
         $telefone2 = $_POST['telefone2'];
+        $observacao = $_POST['observacao'];
         $data_cadastro = datetimeNow();
         $status = 1;
 
-        $query = "INSERT INTO cliente (nome, cpf, rg, empresa, email, celular, telefone1, telefone2, data_cadastro, status) VALUES('$nome', '$cpf', '$rg', '$empresa', '$email', '$celular', '$telefone1','$telefone2', '$data_cadastro', '$status')";
+        $query = "INSERT INTO cliente (nome, cpf, rg, empresa, email, celular, telefone1, telefone2, data_cadastro, status, observacao) VALUES('$nome', '$cpf', '$rg', '$empresa', '$email', '$celular', '$telefone1','$telefone2', '$data_cadastro', '$status', '$observacao')";
 
         if (!$result = mysqli_query($link, $query)) {
             exit(mysqli_error($link));

@@ -32,7 +32,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Novo Usuário</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Novo Usuário</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -92,7 +92,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Editar Usuário</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Editar Usuário</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -146,7 +146,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Alterar Senha</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Alterar Senha</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -182,7 +182,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Visualizar Usuário</h4>
+                            <h4 class="modal-title" id="myModalLabel"><b>Visualizar Usuário</b></h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -228,7 +228,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modalLabel">Excluir Usuário</h4>
+                    <h4 class="modal-title" id="modalLabel"><b>Excluir Usuário</b></h4>
                   </div>
                   <div class="modal-body">
                     Deseja <strong>Excluir</strong> este Usuário?
