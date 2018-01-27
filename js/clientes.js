@@ -219,6 +219,13 @@ function indexEmpresasUpdate(id) {
 // READ records on page load
 $(document).ready(function () {
 
+    $("#buscarClientes").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tableClientes tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
     indexEmpresas("id_empresa");
     readClientes(); // calling function
     readClientesIndex(); // calling function
@@ -241,4 +248,5 @@ $(document).ready(function () {
         $('#update_agencia').mask('9999-9');
         $('#update_conta').mask('99.999-9');
     });
+
 });

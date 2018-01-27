@@ -9,6 +9,14 @@
     <!-- Container -->
     <div class="content">
         <div class="container-fluid">
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">search</i>
+                </span>
+                <input class="form-control" id="buscarUsuarios" type="text" placeholder="Buscar por Usuários ...">
+            </div>
+
             <div class="row">
                 <div class="col-sm-8">
                     <div class="text-left">

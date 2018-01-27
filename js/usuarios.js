@@ -249,6 +249,14 @@ function askDeleteUsuario(id) {
 
 // READ records on page load
 $(document).ready(function () {
+
+    $("#buscarUsuarios").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tableUsuarios tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
     $("#confirmar_senha").keyup(checkConfirmarSenha);
     $("#mudar_senha").keyup(checkSenha);
     $("#senha").keyup(checkCriarSenha);

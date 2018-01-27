@@ -8,6 +8,14 @@
     <!-- Container -->
     <div class="content">
         <div class="container-fluid">
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">search</i>
+                </span>
+                <input class="form-control" id="buscarClientes" type="text" placeholder="Buscar por Clientes ...">
+            </div>
+
             <div class="row">
                 <div class="col-sm-8">
                     <div class="text-left">
@@ -20,11 +28,11 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- tables -->
             <div class="clientes_content"></div>
             <!-- end tables -->
-
+            
             <!-- Modal Adicionar Cliente -->
             <div class="modal fade" id="add_cliente_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

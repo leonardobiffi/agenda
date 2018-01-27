@@ -30,13 +30,8 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    </script>
 
-    <!--
-    <link rel="stylesheet" href="assets/css/material.min.css">
-    <script defer src="assets/js/material.min.js"></script> 
-    <link rel="stylesheet" href="assets/css/getmdl-select.min.css">
-    <script defer src="assets/js/getmdl-select.min.js"></script>
-    -->
 </head>
 
 <body>
@@ -133,9 +128,9 @@
                             </li>
                         </ul>
                         <!--
-                        <form class="navbar-form navbar-right" role="search">
+                        <form class="navbar-form navbar-right" role="search" action="index.php">
                             <div class="form-group  is-empty">
-                                <input type="text" class="form-control" placeholder="Buscar">
+                                <input type="text" class="form-control" placeholder="Buscar" name="busca">
                                 <span class="material-input"></span>
                             </div>
                             <button type="submit" class="btn btn-white btn-round btn-just-icon">

@@ -238,6 +238,13 @@ function indexCidadesUpdate(uf, id = null) {
 
 // READ records on page load
 $(document).ready(function () {
+
+    $("#buscarEmpresas").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tableEmpresas tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
     
     indexEstados("uf_estado", "indexCidades(this.value);");
     readEmpresas(); // calling function

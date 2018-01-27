@@ -16,7 +16,7 @@
                         <th class="text-right">Ações</th>
                     </tr>
                 </thead>
-                <tbody>';
+                <tbody id="tableEmpresas">';
 
     $query = "SELECT empresa.id as id_empresa, empresa.nome as nome_empresa, cnpj, cidade.nome as nome_cidade, estado, bairro FROM empresa INNER JOIN cidade ON empresa.cidade=cidade.id ORDER BY empresa.nome";
 
@@ -39,13 +39,13 @@
                 <td>'.$row['estado'].'</td>
                 <td>'.$row['bairro'].'</td>
                 <td class="td-actions text-right">
-                    <button onclick="viewEmpresa('.$row['id_empresa'].')" type="button" rel="tooltip" title="Visualizar" class="btn btn-info btn-simple btn-xs">
+                    <button onclick="viewEmpresa('.$row['id_empresa'].')" type="button" rel="tooltip" title="Visualizar" class="btn btn-info">
                         <i class="material-icons">person</i>
                     </button>
-                    <button onclick="getEmpresa('.$row['id_empresa'].')" type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
+                    <button onclick="getEmpresa('.$row['id_empresa'].')" type="button" rel="tooltip" title="Editar" class="btn btn-success">
                         <i class="material-icons">edit</i>
                     </button>
-                    <button onclick="askDeleteEmpresa('.$row['id_empresa'].')" type="button" rel="tooltip" title="Excluir" class="btn btn-danger btn-simple btn-xs">
+                    <button onclick="askDeleteEmpresa('.$row['id_empresa'].')" type="button" rel="tooltip" title="Excluir" class="btn btn-danger">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>
