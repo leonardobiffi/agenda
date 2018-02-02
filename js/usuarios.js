@@ -31,7 +31,13 @@ function addUsuario() {
 }
 // READ Usuarios
 function readUsuarios() {
-    $.get("../usuarios/readUsuario.php", {}, function (data, status) {
+
+    var nome_pesquisa = $("#nome_pesquisa").val();
+
+    $.post("../usuarios/readUsuario.php", {
+        nome_pesquisa: nome_pesquisa
+
+    }, function (data, status) {
         $(".usuarios_content").html(data);
     });
 }
@@ -249,13 +255,6 @@ function askDeleteUsuario(id) {
 
 // READ records on page load
 $(document).ready(function () {
-
-    $("#buscarUsuarios").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#tableUsuarios tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
 
     $("#confirmar_senha").keyup(checkConfirmarSenha);
     $("#mudar_senha").keyup(checkSenha);

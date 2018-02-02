@@ -3,8 +3,11 @@
     require_once("../config.php");
     include(DB_PATH);
 
+    $nome_pesquisa = $_POST['nome_pesquisa'];
+
     // Design initial table header
-    $data = '<table class="table">
+    $data = '<div class="table-fixed">
+              <table class="table">
                 <thead>
                     <tr>
                         <th class="text-center">ID</th>
@@ -16,7 +19,14 @@
                 </thead>
                 <tbody id="tableUsuarios">';
 
-    $query = "SELECT * FROM usuario ORDER BY nome_completo";
+    $query = "SELECT * FROM usuario";
+
+    if (strlen($nome_pesquisa) > 0) {
+        $nome_pesquisa = $nome_pesquisa . '%';
+        $query .= " WHERE nome_completo LIKE '$nome_pesquisa'";
+    }
+
+    $query .= " ORDER BY nome_completo, data_cadastro LIMIT 20";
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));
@@ -60,7 +70,8 @@
     }
 
     $data .= '</tbody>
-            </table>';
+            </table>
+            </div>';
 
     echo $data;
 ?>

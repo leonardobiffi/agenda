@@ -45,7 +45,13 @@ function addEmpresa() {
 
 // READ Empresas
 function readEmpresas() {
-    $.get("../empresas/readEmpresa.php", {}, function (data, status) {
+
+    var nome_pesquisa = $("#nome_pesquisa").val();
+
+    $.post("../empresas/readEmpresa.php", {
+        nome_pesquisa: nome_pesquisa
+        
+    }, function (data, status) {
         $(".empresas_content").html(data);
     });
 }
@@ -238,13 +244,6 @@ function indexCidadesUpdate(uf, id = null) {
 
 // READ records on page load
 $(document).ready(function () {
-
-    $("#buscarEmpresas").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#tableEmpresas tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
     
     indexEstados("uf_estado", "indexCidades(this.value);");
     readEmpresas(); // calling function

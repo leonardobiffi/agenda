@@ -6782,3 +6782,9 @@ footer .btn {
         overflow: visible;
     }
 }
+
+.table-fixed {
+  width:100%;
+  overflow:auto;
+  max-height: 450px;
+}

@@ -45,7 +45,13 @@ function addCliente() {
 
 // READ Clientes
 function readClientes() {
-    $.get("../clientes/readCliente.php", {}, function (data, status) {
+
+    var nome_pesquisa = $("#nome_pesquisa").val();
+
+    $.post("../clientes/readCliente.php", {
+        nome_pesquisa: nome_pesquisa
+
+    }, function (data, status) {
         $(".clientes_content").html(data);
     });
 }
@@ -218,14 +224,7 @@ function indexEmpresasUpdate(id) {
 
 // READ records on page load
 $(document).ready(function () {
-
-    $("#buscarClientes").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#tableClientes tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-
+    
     indexEmpresas("id_empresa");
     readClientes(); // calling function
     readClientesIndex(); // calling function

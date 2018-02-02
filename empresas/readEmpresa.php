@@ -3,8 +3,11 @@
     require_once("../config.php");
     include(DB_PATH);
 
+    $nome_pesquisa = $_POST['nome_pesquisa'];
+
     // Design initial table header
-    $data = '<table class="table">
+    $data = '<div class="table-fixed">
+              <table class="table">
                 <thead>
                     <tr>
                         <th class="text-center">ID</th>
@@ -18,7 +21,14 @@
                 </thead>
                 <tbody id="tableEmpresas">';
 
-    $query = "SELECT empresa.id as id_empresa, empresa.nome as nome_empresa, cnpj, cidade.nome as nome_cidade, estado, bairro FROM empresa INNER JOIN cidade ON empresa.cidade=cidade.id ORDER BY empresa.nome";
+    $query = "SELECT empresa.id as id_empresa, empresa.nome as nome_empresa, cnpj, cidade.nome as nome_cidade, estado, bairro FROM empresa INNER JOIN cidade ON empresa.cidade=cidade.id";
+
+    if (strlen($nome_pesquisa) > 0) {
+        $nome_pesquisa = $nome_pesquisa . '%';
+        $query .= " WHERE empresa.nome LIKE '$nome_pesquisa'";
+    }
+
+    $query .= " ORDER BY empresa.nome, empresa.data_cadastro LIMIT 30";
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));
@@ -61,7 +71,8 @@
     }
 
     $data .= '</tbody>
-            </table>';
+            </table>
+            </div>';
 
     echo $data;
 ?>

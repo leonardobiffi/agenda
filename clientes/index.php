@@ -9,13 +9,6 @@
     <div class="content">
         <div class="container-fluid">
 
-            <div class="input-group">
-                <span class="input-group-addon">
-                    <i class="material-icons">search</i>
-                </span>
-                <input class="form-control" id="buscarClientes" type="text" placeholder="Buscar por Clientes ...">
-            </div>
-
             <div class="row">
                 <div class="col-sm-8">
                     <div class="text-left">
@@ -30,7 +23,11 @@
             </div>
             
             <!-- tables -->
-            <div class="clientes_content"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="clientes_content"></div>
+                </div>
+            </div>
             <!-- end tables -->
             
             <!-- Modal Adicionar Cliente -->

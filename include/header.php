@@ -127,18 +127,23 @@
                                 </a>
                             </li>
                         </ul>
-                        <!--
-                        <form class="navbar-form navbar-right" role="search" action="index.php">
-                            <div class="form-group  is-empty">
-                                <input type="text" class="form-control" placeholder="Buscar" name="busca">
-                                <span class="material-input"></span>
-                            </div>
-                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                <i class="material-icons">search</i>
-                                <div class="ripple-container"></div>
-                            </button>
-                        </form>
-                        -->
+
+                        <?php
+                            if( $page != "inicio") {
+                                echo '
+                                <div class="navbar-form navbar-right" role="search">
+                                <div class="form-group is-empty">
+                                    <input type="text" class="form-control" autocomplete="off" placeholder="Buscar" id="nome_pesquisa">
+                                    <span class="material-input"></span>
+                                </div>
+                                <button class="btn btn-white btn-round btn-just-icon" onclick="'.($page=="clientes" ? "readClientes();" : ($page=="empresas" ? "readEmpresas();" : ($page=="usuarios" ? "readUsuarios();" : ""))).'">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                                </div>
+                                ';
+                            }
+                        ?>
                     </div>
                 </div>
             </nav>
