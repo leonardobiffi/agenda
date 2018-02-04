@@ -153,23 +153,20 @@ function viewCliente(id) {
           var delay = 200; //0.2 second
           setTimeout(function() {
             // Assing existing values to the modal popup fields
-            $("#view_nome").html(cliente.nome_completo);
-            $("#view_cpf").html(cliente.cpf);
-            $("#view_rg").html(cliente.rg);
+            $("#view_nome").html(cliente.nome);
             $("#view_empresa").html(cliente.empresa);
-            $("#view_email").html(cliente.email);
-            $("#view_celular").html(cliente.celular);
-            $("#view_telefone1").html(cliente.telefone1);
-            $("#view_telefone2").html(cliente.telefone2);
+            $("#view_endereco").html(cliente.endereco);
+            $("#view_bairro").html(cliente.bairro);
+            $("#view_cep").html(cliente.cep);
+            $("#view_cidade").html(cliente.cidade);
+            $("#view_uf").html(cliente.uf);
+            $("#view_ddd").html(cliente.ddd);
+            $("#view_fone").html(cliente.fone);
+            $("#view_ddd1").html(cliente.ddd);
+            $("#view_fone1").html(cliente.fone);
+            $("#view_nascimento").html(cliente.nascimento);
             $("#view_data_cadastro").html(cliente.data_cadastro);
-            $("#view_data_modificacao").html(cliente.data_modificacao);
-            $("#view_observacao").html(cliente.observacao);
-
-            if(cliente.status == 1) {
-              $("#view_status").html("Ativo");
-            } else {
-              $("#view_status").html("Inativo");
-            }
+            $("#view_obs").html(cliente.obs);
 
           }, delay);
       }

@@ -83,13 +83,14 @@
                             <p>Bancos</p>
                         </a>
                     </li>
-                    -->
+                    
                     <li class="<?php if($page=='empresas'){echo 'active';}?>">
                         <a href="<?php echo BASEURL; ?>empresas">
                             <i class="material-icons">business</i>
                             <p>Empresas</p>
                         </a>
                     </li>
+                    -->
                     <li class="<?php if($page=='clientes'){echo 'active';}?>">
                         <a href="<?php echo BASEURL; ?>clientes">
                             <i class="material-icons">work</i>

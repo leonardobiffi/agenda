@@ -8,16 +8,15 @@
                 <thead>
                     <tr>
                         <th>Nome Completo</th>
-                        <th>CPF</th>
                         <th>Empresa</th>
-                        <th>Celular</th>
+                        <th>DDD</th>
                         <th>Telefone</th>
-                        <th>Email</th>
+                        <th>Cidade</th>
                     </tr>
                 </thead>
                 <tbody>';
 
-    $query = "SELECT cliente.id as id_cliente, cliente.nome as nome_completo, empresa.nome as nome_empresa, cliente.celular as celular, cliente.telefone1 as telefone, email, cpf FROM cliente INNER JOIN empresa ON empresa.id=cliente.empresa ORDER BY cliente.data_cadastro DESC LIMIT 5";
+    $query = "SELECT nome, empresa, ddd, fone, cidade FROM cliente ORDER BY cliente.id DESC, cliente.data_cadastro DESC LIMIT 6";
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));
@@ -31,12 +30,11 @@
         {
             $data .= '
             <tr>
-                <td>'.$row['nome_completo'].'</td>
-                <td>'.$row['cpf'].'</td>
-                <td>'.$row['nome_empresa'].'</td>
-                <td>'.$row['celular'].'</td>
-                <td>'.$row['telefone'].'</td>
-                <td>'.$row['email'].'</td>
+                <td>'.$row['nome'].'</td>
+                <td>'.$row['empresa'].'</td>
+                <td>'.$row['ddd'].'</td>
+                <td>'.$row['fone'].'</td>
+                <td>'.$row['cidade'].'</td>
             </tr>';
 
             $number++;

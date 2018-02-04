@@ -207,49 +207,57 @@
                                     <td id="view_nome"></td>
                                   </tr>
                                   <tr>
-                                    <th>CPF</th>
-                                    <td id="view_cpf"></td>
-                                  </tr>
-                                  <tr>
-                                    <th>RG</th>
-                                    <td id="view_rg"></td>
-                                  </tr>
-                                  <tr>
                                     <th>Empresa</th>
                                     <td id="view_empresa"></td>
                                   </tr>
                                   <tr>
-                                    <th>Email</th>
-                                    <td id="view_email"></td>
+                                    <th>Endereço</th>
+                                    <td id="view_endereco"></td>
                                   </tr>
                                   <tr>
-                                    <th>Celular</th>
-                                    <td id="view_celular"></td>
+                                    <th>Bairro</th>
+                                    <td id="view_bairro"></td>
                                   </tr>
                                   <tr>
-                                    <th>Telefone 1</th>
-                                    <td id="view_telefone1"></td>
+                                    <th>CEP</th>
+                                    <td id="view_cep"></td>
                                   </tr>
                                   <tr>
-                                    <th>Telefone 2</th>
-                                    <td id="view_telefone2"></td>
+                                    <th>Cidade</th>
+                                    <td id="view_cidade"></td>
                                   </tr>
                                   <tr>
-                                    <th>Status</th>
-                                    <td id="view_status"></td>
+                                    <th>UF</th>
+                                    <td id="view_uf"></td>
+                                  </tr>
+                                  <tr>
+                                    <th>DDD</th>
+                                    <td id="view_ddd"></td>
+                                  </tr>
+                                  <tr>
+                                    <th>Telefone</th>
+                                    <td id="view_fone"></td>
+                                  </tr>
+                                  <tr>
+                                    <th>DDD</th>
+                                    <td id="view_ddd1"></td>
+                                  </tr>
+                                  <tr>
+                                    <th>Telefone</th>
+                                    <td id="view_fone1"></td>
+                                  </tr>
+                                  <tr>
+                                    <th>Data Nascimento</th>
+                                    <td id="view_nascimento"></td>
                                   </tr>
                                   <tr>
                                     <th>Data Cadastro</th>
                                     <td id="view_data_cadastro"></td>
                                   </tr>
                                   <tr>
-                                    <th>Data Modificação</th>
-                                    <td id="view_data_modificacao"></td>
-                                  </tr>
-                                  <tr>
                                     <th>Observação</th>
                                     <td>
-                                        <textarea id="view_observacao" cols="50" rows="6" readonly></textarea>
+                                        <textarea id="view_obs" cols="50" rows="6" readonly></textarea>
                                     </td>
                                   </tr>
                                 </table>
