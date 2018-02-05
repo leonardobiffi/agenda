@@ -40,52 +40,76 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-8">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Nome Completo</label>
                                         <input type="text" class="form-control" id="nome"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">CPF</label>
-                                        <input type="text" class="form-control" id="cpf"/>
+                                        <label class="control-label">Data Nascimento</label>
+                                        <input type="text" class="form-control" id="nascimento" onkeypress="return isNumberKey(event)"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Empresa</label>
+                                        <input type="text" class="form-control" id="empresa"/>
                                     </div>
                                 </div> 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">RG</label>
-                                        <input type="text" class="form-control" id="rg"/>
+                                        <label class="control-label">Cidade</label>
+                                        <input type="text" class="form-control" id="cidade"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
+                                <div class="col-sm-1">
                                     <div class="form-group label-floating">
-                                        <label class="control-label" for="status">Empresa</label>
-                                        <div class="index_empresas_content"></div>
+                                        <label class="control-label">UF</label>
+                                        <input type="text" class="form-control" id="uf"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-2">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Email</label>
-                                        <input type="email" class="form-control" id="email"/>
+                                        <label class="control-label">CEP</label>
+                                        <input type="text" class="form-control" id="cep" onkeypress="return isNumberKey(event)"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Celular</label>
-                                        <input type="text" class="form-control" id="celular"/>
+                                        <label class="control-label">Endereço</label>
+                                        <input type="text" class="form-control" id="endereco"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Bairro</label>
+                                        <input type="email" class="form-control" id="bairro"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">DDD</label>
+                                        <input type="text" class="form-control" id="ddd1" onkeypress="return isNumberKey(event)"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Telefone 1</label>
-                                        <input type="text" class="form-control" id="telefone1"/>
+                                        <input type="text" class="form-control" id="telefone1" onkeypress="return isNumberKey(event)"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-2">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">DDD</label>
+                                        <input type="text" class="form-control" id="ddd2" onkeypress="return isNumberKey(event)"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Telefone 2</label>
-                                        <input type="text" class="form-control" id="telefone2"/>
+                                        <input type="text" class="form-control" id="telefone2" onkeypress="return isNumberKey(event)"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -115,62 +139,76 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-8">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Nome Completo</label>
                                         <input type="text" class="form-control" id="update_nome"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">CPF</label>
-                                        <input type="text" class="form-control" id="update_cpf"/>
+                                        <label class="control-label">Data Nascimento</label>
+                                        <input type="text" class="form-control" id="update_nascimento" onkeypress="return isNumberKey(event)"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Empresa</label>
+                                        <input type="text" class="form-control" id="update_empresa"/>
                                     </div>
                                 </div> 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">RG</label>
-                                        <input type="text" class="form-control" id="update_rg"/>
+                                        <label class="control-label">Cidade</label>
+                                        <input type="text" class="form-control" id="update_cidade"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
+                                <div class="col-sm-1">
                                     <div class="form-group label-floating">
-                                        <label class="control-label" for="status">Empresa</label>
-                                        <div class="index_empresas_update_content"></div>
+                                        <label class="control-label">UF</label>
+                                        <input type="text" class="form-control" id="update_uf"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-2">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Email</label>
-                                        <input type="text" class="form-control" id="update_email"/>
+                                        <label class="control-label">CEP</label>
+                                        <input type="text" class="form-control" id="update_cep" onkeypress="return isNumberKey(event)"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <div class="form-group label-floating">
-                                        <label class="control-label">Celular</label>
-                                        <input type="text" class="form-control" id="update_celular"/>
+                                        <label class="control-label">Endereço</label>
+                                        <input type="text" class="form-control" id="update_endereco"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Bairro</label>
+                                        <input type="text" class="form-control" id="update_bairro"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">DDD</label>
+                                        <input type="text" class="form-control" id="update_ddd1" onkeypress="return isNumberKey(event)"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Telefone 1</label>
-                                        <input type="text" class="form-control" id="update_telefone1"/>
+                                        <input type="text" class="form-control" id="update_telefone1" onkeypress="return isNumberKey(event)"/>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-2">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">DDD</label>
+                                        <input type="text" class="form-control" id="update_ddd2" onkeypress="return isNumberKey(event)"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Telefone 2</label>
-                                        <input type="text" class="form-control" id="update_telefone2"/>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group label-floating">
-                                        <label class="control-label" for="update_status">Status</label>
-                                        <select class="form-control" id="update_status">
-                                            <option></option>
-                                            <option value="1">Ativo</option>
-                                            <option value="0">Inativo</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="update_telefone2" onkeypress="return isNumberKey(event)"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -257,7 +295,7 @@
                                   <tr>
                                     <th>Observação</th>
                                     <td>
-                                        <textarea id="view_obs" cols="50" rows="6" readonly></textarea>
+                                        <textarea id="view_obs" cols="90" rows="8" readonly></textarea>
                                     </td>
                                   </tr>
                                 </table>

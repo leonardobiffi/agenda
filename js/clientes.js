@@ -2,24 +2,33 @@
 function addCliente() {
     // get values
     var nome = $("#nome").val();
-    var cpf = $("#cpf").val();
-    var rg = $("#rg").val();
-    var empresa = $("#id_empresa").val();
-    var email = $("#email").val();
-    var celular = $("#celular").val();
+    var nascimento = $("#nascimento").val();
+    var empresa = $("#empresa").val();
+    var cidade = $("#cidade").val();
+    var cep = $("#cep").val();
+    var uf = $("#uf").val();
+    var endereco = $("#endereco").val();
+    var bairro = $("#bairro").val();
+    var ddd1 = $("#ddd1").val();
     var telefone1 = $("#telefone1").val();
+    var ddd2 = $("#ddd2").val();
     var telefone2 = $("#telefone2").val();
     var observacao = $("#observacao").val();
+    
 
     // Add Cliente
     $.post("../clientes/addCliente.php", {
         nome: nome,
-        cpf: cpf,
-        rg: rg,
+        nascimento: nascimento,
         empresa: empresa,
-        email: email,
-        celular: celular,
+        cidade: cidade,
+        cep: cep,
+        uf: uf,
+        endereco: endereco,
+        bairro: bairro,
+        ddd1: ddd1,
         telefone1: telefone1,
+        ddd2: ddd2,
         telefone2: telefone2,
         observacao: observacao
 
@@ -32,12 +41,16 @@ function addCliente() {
 
         // clear fields from the popup
         $("#nome").val("");
-        $("#cpf").val("");
-        $("#rg").val("");
+        $("#nascimento").val("");
         $("#empresa").val("");
-        $("#email").val("");
-        $("#celular").val("");
+        $("#cidade").val("");
+        $("#cep").val("");
+        $("#uf").val("");
+        $("#endereco").val("");
+        $("#bairro").val("");
+        $("#ddd1").val("");
         $("#telefone1").val("");
+        $("#ddd2").val("");
         $("#telefone2").val("");
         $("#observacao").val("");
     });
@@ -81,15 +94,18 @@ function getCliente(id) {
             setTimeout(function() {
               // Assing existing values to the modal popup fields
               $("#update_nome").val(cliente.nome);
-              $("#update_cpf").val(cliente.cpf);
-              $("#update_rg").val(cliente.rg);
+              $("#update_nascimento").val(cliente.nascimento);
               $("#update_empresa").val(cliente.empresa);
-              $("#update_email").val(cliente.email);
-              $("#update_celular").val(cliente.celular);
-              $("#update_telefone1").val(cliente.telefone1);
-              $("#update_telefone2").val(cliente.telefone2);
-              $("#update_status").val(cliente.status);
-              $("#update_observacao").val(cliente.observacao);
+              $("#update_endereco").val(cliente.endereco);
+              $("#update_bairro").val(cliente.bairro);
+              $("#update_cep").val(cliente.cep);
+              $("#update_cidade").val(cliente.cidade);
+              $("#update_uf").val(cliente.uf);
+              $("#update_ddd1").val(cliente.ddd);
+              $("#update_telefone1").val(cliente.fone);
+              $("#update_ddd2").val(cliente.ddd1);
+              $("#update_telefone2").val(cliente.fone1);
+              $("#update_observacao").val(cliente.obs);
 
             }, delay);
         }
@@ -102,14 +118,17 @@ function getCliente(id) {
 function updateCliente() {
     // get values
     var nome = $("#update_nome").val();
-    var cpf = $("#update_cpf").val();
-    var rg = $("#update_rg").val();
+    var nascimento = $("#update_nascimento").val();
     var empresa = $("#update_empresa").val();
-    var email = $("#update_email").val();
-    var celular = $("#update_celular").val();
+    var endereco = $("#update_endereco").val();
+    var bairro = $("#update_bairro").val();
+    var cep = $("#update_cep").val();
+    var cidade = $("#update_cidade").val();
+    var uf = $("#update_uf").val();
+    var ddd1 = $("#update_ddd1").val();
     var telefone1 = $("#update_telefone1").val();
+    var ddd2 = $("#update_ddd2").val();
     var telefone2 = $("#update_telefone2").val();
-    var status = $("#update_status").val();
     var observacao = $("#update_observacao").val();
     
     // get hidden field value
@@ -119,14 +138,17 @@ function updateCliente() {
     $.post("../clientes/updateCliente.php", {
             id: id,
             nome: nome,
-            cpf: cpf,
-            rg: rg,
+            nascimento: nascimento,
             empresa: empresa,
-            email: email,
-            celular: celular,
+            endereco: endereco,
+            bairro: bairro,
+            cep: cep,
+            cidade: cidade,
+            uf: uf,
+            ddd1: ddd1,
             telefone1: telefone1,
+            ddd2: ddd2,
             telefone2: telefone2,
-            status: status,
             observacao: observacao
         },
         function (data, status) {
@@ -218,6 +240,14 @@ function indexEmpresasUpdate(id) {
     );
 }
 
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
+}
+
 
 // READ records on page load
 $(document).ready(function () {
@@ -228,21 +258,23 @@ $(document).ready(function () {
 
     jQuery(function($) {
         $.mask.definitions['~']='[+-]';
-        $('#cpf').mask('999.999.999-99');
-        $('#telefone1').mask('(99) 9999-9999');
-        $('#telefone2').mask('(99) 9999-9999');
-        $('#celular').mask('(99) 99999-9999');
-        $('#rg').mask('99.999.999-9');
-        $('#agencia').mask('9999-9');
-        $('#conta').mask('99.999-9');
+        $('#cep').mask('99999-999');
+        $('#nascimento').mask('99/99/9999');
+        $('#telefone1').mask('9999-9999');
+        $('#telefone2').mask('9999-9999');
+        
+        $('#update_cep').mask('99999-999');
+        $('#update_nascimento').mask('99/99/9999');
+        $('#update_telefone1').mask('9999-9999');
+        $('#update_telefone2').mask('9999-9999');
 
-        $('#update_cpf').mask('999.999.999-99');
-        $('#update_telefone1').mask('(99) 9999-9999');
-        $('#update_telefone2').mask('(99) 9999-9999');
-        $('#update_celular').mask('(99) 99999-9999');
-        $('#update_rg').mask('99.999.999-9');
-        $('#update_agencia').mask('9999-9');
-        $('#update_conta').mask('99.999-9');
+        $("#uf").attr('maxlength','2');
+        $("#ddd1").attr('maxlength','3');
+        $("#ddd2").attr('maxlength','3');
+
+        $("#update_uf").attr('maxlength','2');
+        $("#update_ddd1").attr('maxlength','3');
+        $("#update_ddd2").attr('maxlength','3');
     });
 
 });

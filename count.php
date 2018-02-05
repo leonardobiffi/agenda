@@ -22,7 +22,7 @@
     }
 
     //contagem empresas
-    $query = "SELECT count(*) as num_empresa FROM empresa";
+    $query = "select count(DISTINCT empresa) as num_empresa from cliente;";
 
     if (!$result = mysqli_query($link, $query)) {
         exit(mysqli_error($link));

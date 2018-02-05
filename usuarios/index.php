@@ -170,7 +170,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success btn-simple" onclick="updateSenha()"><i class="fa fa-check"></i> Salvar</button>
                             <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal"><i class="fa fa-close"></i> Fechar</button>
-                            <input type="hidden" id="hidden_senha_id">
+                            <input type="hidden" id="hidden_senha_id_mudar">
                         </div>
                     </div>
                 </div>

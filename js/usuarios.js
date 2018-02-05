@@ -137,7 +137,7 @@ function viewUsuario(id) {
 // DETAILS Senha
 function getSenha(id) {
     // Add User ID to the hidden field for furture usage
-    $("#hidden_senha_id").val(id);
+    $("#hidden_senha_id_mudar").val(id);
 
     var delay = 200; //0.2 second
     setTimeout(function() {
@@ -151,15 +151,18 @@ function getSenha(id) {
     $("#update_senha_modal").modal("show");
 }
 
-// UPDATE Usuario
+// UPDATE Senha Usuario
 function updateSenha() {
     // get values
     var senha = $("#mudar_senha").val();
     var confirmar_senha = $("#confirmar_senha").val();
 
+
     if(senha == confirmar_senha && senha.length >= 6) {
         // get hidden field value
-        var id = $("#hidden_usuario_id").val();
+        var id = $("#hidden_senha_id_mudar").val();
+
+        alert(id);
 
         // Update Usuario in php file
         $.post("../usuarios/updateSenha.php", {

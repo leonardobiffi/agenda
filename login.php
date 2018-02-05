@@ -13,13 +13,13 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Check if username is empty
         if(empty(trim($_POST["username"]))){
-            $username_err = 'Please enter username.';
+            $username_err = 'Digite o nome de usuário';
         } else{
             $username = trim($_POST["username"]);
         }
         // Check if password is empty
         if(empty(trim($_POST['password']))){
-            $password_err = 'Please enter your password.';
+            $password_err = 'Por favor, insira sua senha';
         } else{
             $password = trim($_POST['password']);
         }
@@ -73,15 +73,15 @@
                                 header("location: " . BASEURL);
                             } else{
                                 // Display an error message if password is not valid
-                                $password_err = 'The password you entered was not valid.';
+                                $password_err = 'A senha que você digitou não é válida';
                             }
                         }
                     } else{
                         // Display an error message if username doesn't exist
-                        $username_err = 'No account found with that username.';
+                        $username_err = 'Nenhuma conta encontrada com esse nome de usuário';
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo "Opa! Algo deu errado. Por favor, tente novamente mais tarde";
                 }
             }
             // Close statement
