@@ -6,7 +6,7 @@
 ?>
             
             <!-- Container -->
-            <div class="content">
+            <div class="content" style="margin-top: -10px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6">

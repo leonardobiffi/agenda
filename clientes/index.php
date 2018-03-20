@@ -4,34 +4,41 @@
     include(DB_PATH);
     include(HEADER_TEMPLATE); 
 ?>
-
+<!-- Content -->
+<div class="content" style="margin-top: -20px;"> 
     <!-- Container -->
-    <div class="content">
-        <div class="container-fluid">
+    <div class="container-fluid">
 
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="text-left">
-                        <h3>Clientes</h3>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="text-right">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#add_cliente_modal">Adicionar</button>
-                    </div>
+        <div class="row" style="padding-bottom: 20px;">
+            <div class="col-sm-8">
+                <div class="text-left">
+                    <h3>Agenda</h3>
                 </div>
             </div>
-            
-            <!-- tables -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="clientes_content"></div>
+            <div class="col-sm-4">
+                <div class="text-right">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#add_cliente_modal">Adicionar</button>
                 </div>
             </div>
-            <!-- end tables -->
-            
-            <!-- Modal Adicionar Cliente -->
-            <div class="modal fade" id="add_cliente_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="col-sm-6">
+                <div class="form-group-lg" role="search">
+                    <input type="text" class="form-control" autocomplete="off" onfocus="empresa_pesquisa.value=''" placeholder="Buscar por Cliente" id="cliente_pesquisa">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group-lg" role="search">
+                    <input type="text" class="form-control" autocomplete="off" onfocus="cliente_pesquisa.value=''" placeholder="Buscar por Empresa" id="empresa_pesquisa">
+                </div>
+            </div>
+        </div>
+
+        <!-- row -->
+        <div class="row">
+            <div class="clientes_content"></div>
+        </div><!-- End Row -->
+
+      <!-- Modal Adicionar Cliente -->
+        <div class="modal fade" id="add_cliente_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -328,8 +335,26 @@
                 </div>
               </div>
             </div> <!-- Fim Modal excluir Cliente -->
+   
+    </div> <!-- End Container -->
+</div> <!-- End Content -->
 
-        </div>
-    </div>
+<script>
+var input = document.getElementById("cliente_pesquisa");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        readClientes();
+    }
+});
+
+var input = document.getElementById("empresa_pesquisa");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        readEmpresas();
+    }
+});
+</script>
 
 <?php include(FOOTER_TEMPLATE); ?>

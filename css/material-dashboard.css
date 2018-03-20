@@ -919,7 +919,7 @@ h2.title {
 .sidebar .sidebar-wrapper,
 .perfect-scrollbar-on .main-panel,
 .main-panel {
-    overflow: hidden;
+    overflow: auto;
 }
 
 .perfect-scrollbar-off .sidebar .sidebar-wrapper,
@@ -942,7 +942,7 @@ h2.title {
 .main-panel>.content {
     margin-top: 50px;
     padding: 30px 15px;
-    min-height: calc(100% - 123px);
+    min-height: calc(80% - 123px);
 }
 
 .main-panel>.footer {
@@ -2665,7 +2665,7 @@ output {
 .form-group-lg .form-control {
     height: 44px;
     padding: 9px 0;
-    font-size: 18px;
+    font-size: 23px;
     line-height: 1.33333;
 }
 
@@ -2683,7 +2683,7 @@ output {
     height: 44px;
     min-height: 38px;
     padding: 10px 0;
-    font-size: 18px;
+    font-size: 23px;
     line-height: 1.33333;
 }
 
@@ -2708,7 +2708,7 @@ output {
 @media (min-width: 768px) {
     .form-horizontal .form-group-lg .control-label {
         padding-top: 13px;
-        font-size: 18px;
+        font-size: 25px;
     }
 }
 
@@ -2941,8 +2941,8 @@ fieldset[disabled] .form-group .form-control {
 }
 
 .form-control::-moz-placeholder {
-    font-size: 14px;
-    line-height: 1.42857;
+    font-size: 23px;
+    line-height: 1.02857;
     color: #AAAAAA;
     font-weight: 400;
 }
@@ -6759,7 +6759,7 @@ footer .btn {
 
 @media (min-width: 768px) {
     .navbar>.container-fluid .navbar-brand {
-        margin-left: 0;
+        margin-left: 0px;
     }
 }
 
@@ -6783,8 +6783,6 @@ footer .btn {
     }
 }
 
-.table-fixed {
-  width:100%;
-  overflow:auto;
-  max-height: 450px;
+.table-responsive {
+    max-height:600px;
 }

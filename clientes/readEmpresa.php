@@ -25,7 +25,7 @@
 
     if (strlen($nome_pesquisa) > 0) {
         $nome_pesquisa = $nome_pesquisa . '%';
-        $query .= " WHERE cliente.nome LIKE '$nome_pesquisa'";
+        $query .= " WHERE cliente.empresa LIKE '$nome_pesquisa'";
     }
 
     $query .= " ORDER BY cliente.id DESC, cliente.data_cadastro LIMIT 30";

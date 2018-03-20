@@ -59,9 +59,22 @@ function addCliente() {
 // READ Clientes
 function readClientes() {
 
-    var nome_pesquisa = $("#nome_pesquisa").val();
+    var nome_pesquisa = $("#cliente_pesquisa").val();
 
     $.post("../clientes/readCliente.php", {
+        nome_pesquisa: nome_pesquisa
+
+    }, function (data, status) {
+        $(".clientes_content").html(data);
+    });
+}
+
+// READ Empresas
+function readEmpresas() {
+
+    var nome_pesquisa = $("#empresa_pesquisa").val();
+
+    $.post("../clientes/readEmpresa.php", {
         nome_pesquisa: nome_pesquisa
 
     }, function (data, status) {
@@ -278,3 +291,14 @@ $(document).ready(function () {
     });
 
 });
+
+$("#cliente_pesquisa").bind("keypress", {}, keypressInBox);
+
+function keypressInBox(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) { //Enter keycode                        
+        e.preventDefault();
+
+        readClientes();
+    }
+};

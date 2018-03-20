@@ -30,7 +30,6 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
-    </script>
 
 </head>
 
@@ -43,7 +42,7 @@
                 Tip 2: you can also add an image using data-image tag 
             -->
             <div class="logo">
-                <a href="#" class="simple-text">
+                <a href="<?php echo BASEURL; ?>clientes" class="simple-text">
                     Nome Empresa
                 </a>
             </div>
@@ -51,8 +50,15 @@
                 <ul class="nav">
                     <li class="<?php if($page=='inicio'){echo 'active';}?>">
                         <a href="<?php echo BASEURL; ?>">
-                            <i class="material-icons">home</i>
-                            <p>Início</p>
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li class="<?php if($page=='clientes'){echo 'active';}?>">
+                        <a href="<?php echo BASEURL; ?>clientes">
+                            <i class="material-icons">group</i>
+                            <p>Clientes</p>
                         </a>
                     </li>
                     
@@ -91,12 +97,6 @@
                         </a>
                     </li>
                     -->
-                    <li class="<?php if($page=='clientes'){echo 'active';}?>">
-                        <a href="<?php echo BASEURL; ?>clientes">
-                            <i class="material-icons">work</i>
-                            <p>Clientes</p>
-                        </a>
-                    </li>
                     <li class="active-pro">
                         <a href="<?php echo BASEURL; ?>logout.php">
                             <i class="material-icons">cancel</i>
@@ -107,44 +107,3 @@
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-transparent navbar-absolute">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="<?php echo BASEURL; ?>"> Agenda de Clientes </a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">
-                                    <i class="material-icons">person</i>
-                                    <?php echo $_SESSION['username']; ?>
-                                    <div class="ripple-container"></div>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <?php
-                            if( $page != "inicio") {
-                                echo '
-                                <div class="navbar-form navbar-right" role="search">
-                                <div class="form-group is-empty">
-                                    <input type="text" class="form-control" autocomplete="off" placeholder="Buscar" id="nome_pesquisa">
-                                    <span class="material-input"></span>
-                                </div>
-                                <button class="btn btn-white btn-round btn-just-icon" onclick="'.($page=="clientes" ? "readClientes();" : ($page=="empresas" ? "readEmpresas();" : ($page=="usuarios" ? "readUsuarios();" : ""))).'">
-                                    <i class="material-icons">search</i>
-                                    <div class="ripple-container"></div>
-                                </button>
-                                </div>
-                                ';
-                            }
-                        ?>
-                    </div>
-                </div>
-            </nav>

@@ -7,13 +7,13 @@
 ?>
 
     <!-- Container -->
-    <div class="content">
+    <div class="content" style="margin-top: -20px;">
         <div class="container-fluid">
 
             <div class="row">
                 <div class="col-sm-8">
                     <div class="text-left">
-                        <h3>Usuários</h3>
+                        <h3>Cadastros</h3>
                     </div>
                 </div>
                 <div class="col-sm-4">
