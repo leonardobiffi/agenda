@@ -114,12 +114,12 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
   </head>
 
-<body>
+<body background="img/background.jpg" style="background-size: 100%;">
 <div class="container" >  
             <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12"></div>
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="logo">
-                    <img src="img/logo_default.jpg"  alt="Logo"  > 
+                    <img src="img/logo.png"  alt="Logo"  > 
                 </div>
                 <div class="row loginbox">                    
                     <div class="singtext">
@@ -151,8 +151,8 @@
                 <br>                
                 <br>
                 <footer class="footer">                 
-                    <a href="http://www.kimera.ml" target="_blank">www.kimera.ml</a>
-                    <p >© 2017 Kimera. Todos os direitos reservados </p>                 
+                    <a href="http://www.procopiodecarvalho.com.br" target="_blank">www.procopiodecarvalho.com.br</a>
+                    <p >© 2018 Todos os direitos reservados </p>                 
                 </footer> <!--footer Section ends-->
             </div>
         </div>

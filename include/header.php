@@ -43,7 +43,7 @@
             -->
             <div class="logo">
                 <a href="<?php echo BASEURL; ?>clientes" class="simple-text">
-                    Nome Empresa
+                    Procópio de Carvalho
                 </a>
             </div>
             <div class="sidebar-wrapper">
